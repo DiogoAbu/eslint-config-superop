@@ -200,7 +200,7 @@ module.exports = {
     'default-case': 0,
     'dot-notation': 1,
     'eol-last': 1,
-    eqeqeq: [1, 'allow-null'],
+    eqeqeq: [1, 'always', { null: 'ignore' }],
     'eslint-comments/no-aggregating-enable': 1,
     'eslint-comments/no-unlimited-disable': 1,
     'eslint-comments/no-unused-disable': 1,

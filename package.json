@@ -1,16 +1,36 @@
 {
   "name": "eslint-config-superop",
+  "description": "A Super Opinionated ESLint Shareable Config with Prettier",
   "version": "0.0.0",
   "main": "index.js",
-  "repository": "https://github.com/DiogoAbu/eslint-config-superop",
-  "author": "DiogoAbu",
-  "license": "MIT",
-  "private": true,
+  "files": [
+    ".prettierrc.js"
+  ],
+  "scripts": {
+    "eslint": "eslint . --ext .ts,.tsx,.js,.commitlintrc.js,.eslintrc.js,.prettierrc.js --max-warnings 0 --config ./.eslintrc.js",
+    "prettier": "prettier .releaserc.json \"**/*.json\" \".vscode/*.json\" --config ./.prettierrc.js",
+    "lint": "yarn eslint && yarn prettier",
+    "lint-fix": "yarn eslint --fix && yarn prettier --write",
+    "fix-lockfile": "node ./scripts/fix-lockfile.js",
+    "postinstall": "patch-package || exit 0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn fix-lockfile && lint-staged",
+      "post-commit": "git update-index --again",
+      "pre-push": "git fetch --prune origin \"+refs/tags/*:refs/tags/*\""
+    }
+  },
+  "lint-staged": {
+    "*.{j,t}s{,x}": "eslint --config ./.eslintrc.js --cache --fix",
+    "*.json": "prettier --config ./.prettierrc.js --write"
+  },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "@semantic-release/exec": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
+    "@semantic-release/npm": "^7.0.10",
     "babel-eslint": "^10.1.0",
     "conventional-changelog-conventionalcommits": "^4.5.0",
     "eslint": "^7.18.0",
@@ -26,6 +46,8 @@
     "eslint-plugin-react-native": "^3.10.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-unused-imports": "^1.0.1",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
     "patch-package": "^6.2.2",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.2.1",
@@ -47,5 +69,34 @@
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-unused-imports": "^1.0.1",
     "prettier": "^2.2.1"
-  }
+  },
+  "license": "MIT",
+  "author": "DiogoAbu",
+  "repository": "github:DiogoAbu/eslint-config-superop",
+  "homepage": "https://github.com/DiogoAbu/eslint-config-superop",
+  "bugs": "https://github.com/DiogoAbu/eslint-config-superop/issues",
+  "keywords": [
+    "check",
+    "checker",
+    "code checker",
+    "code linter",
+    "code standards",
+    "code style",
+    "code",
+    "enforce",
+    "eslint",
+    "eslintconfig",
+    "hint",
+    "jscs",
+    "jshint",
+    "lint",
+    "opinionated",
+    "policy",
+    "prettier",
+    "quality",
+    "style checker",
+    "style linter",
+    "style",
+    "verify"
+  ]
 }

@@ -34,5 +34,6 @@
   "editor.formatOnSave": true,
   "eslint.enable": true,
   "eslint.format.enable": true,
+  "eslint.onIgnoredFiles": "warn",
   "tslint.enable": false
 }

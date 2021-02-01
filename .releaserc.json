@@ -20,15 +20,16 @@
       }
     ],
     [
-      "@semantic-release/exec",
+      "@semantic-release/npm",
       {
-        "prepareCmd": "yarn version --new-version ${nextRelease.version} --no-git-tag-version --allow-same-version"
+        "tarballDir": "dist"
       }
     ],
     [
       "@semantic-release/github",
       {
-        "githubUrl": "https://api.github.com"
+        "githubUrl": "https://api.github.com",
+        "assets": "dist/*.tgz"
       }
     ],
     [
