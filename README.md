@@ -10,10 +10,11 @@ It supports:
 - React Native
 - Jest
 - JSON files
+- Directory aliases ([babel-plugin-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver))
 
 ## Installation
 
-1. Install all peer dependencies
+1. Install all peer dependencies:
 
 **yarn**:
 ```sh
@@ -50,14 +51,27 @@ This is all you need on your `.eslintrc` file:
 And this string for the `.prettierrc` file:
 
 ```
-"eslint-config-superop/.prettierrc.js"
+"eslint-config-superop/.prettierrc"
 ```
 
 ESLint and Prettier both support ignore files, but they do not have an extend feature so you should **copy and paste** the following files inside your project folder:
 - [.eslintignore](.eslintignore)
 - [.prettierignore](.prettierignore)
 
-You might also want to **copy and paste** the following scripts from our [package.json](package.json)`:
+Copy ignores to current folder:
+```sh
+cp -r node_modules/eslint-config-superop/.eslintignore .
+cp -r node_modules/eslint-config-superop/.prettierignore .
+```
+
+This package also goes well with EditorConfig, just **copy and paste** [.editorconfig](.editorconfig) inside your project folder.
+
+Copy EditorConfig to current folder:
+```sh
+cp -r node_modules/eslint-config-superop/.editorconfig .
+```
+
+You might also want to **copy and paste** the following scripts from our [package.json](package.json):
 - eslint
 - prettier
 - lint

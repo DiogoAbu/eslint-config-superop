@@ -28,7 +28,7 @@ generated/**
 
 !.vscode/
 !.vscode/**
+!.eslintrc
+!.prettierrc
 !.commitlintrc.js
-!.eslintrc.js
-!.prettierrc.js
 !.releaserc.json

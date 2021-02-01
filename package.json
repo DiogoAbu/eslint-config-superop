@@ -4,11 +4,14 @@
   "version": "0.1.0",
   "main": "index.js",
   "files": [
-    ".prettierrc.js"
+    ".editorconfig",
+    ".prettierrc",
+    ".eslintignore",
+    ".prettierignore"
   ],
   "scripts": {
-    "eslint": "eslint . --ext .ts,.tsx,.js,.commitlintrc.js,.eslintrc.js,.prettierrc.js --max-warnings 0 --config ./.eslintrc.js",
-    "prettier": "prettier .releaserc.json \"**/*.json\" \".vscode/*.json\" --config ./.prettierrc.js",
+    "eslint": "eslint . --ext .ts,.tsx,.js,.jsx --max-warnings 0 --config ./.eslintrc",
+    "prettier": "prettier .releaserc.json \".vscode/**/*.json\" \"**/*.{json,eslintrc,prettierrc}\" --config ./.prettierrc --check",
     "lint": "yarn eslint && yarn prettier",
     "lint-fix": "yarn eslint --fix && yarn prettier --write",
     "fix-lockfile": "node ./scripts/fix-lockfile.js",
@@ -23,14 +26,16 @@
     }
   },
   "lint-staged": {
-    "*.{j,t}s{,x}": "eslint --config ./.eslintrc.js --cache --fix",
-    "*.json": "prettier --config ./.prettierrc.js --write"
+    "*.{j,t}s{,x}": "eslint --config ./.eslintrc --cache --fix",
+    "*.json": "prettier --config ./.prettierrc --write"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@semantic-release/git": "^9.0.0",
     "@semantic-release/npm": "^7.0.10",
+    "@typescript-eslint/eslint-plugin": "^4.14.2",
+    "@typescript-eslint/parser": "^4.14.2",
     "babel-eslint": "^10.1.0",
     "conventional-changelog-conventionalcommits": "^4.5.0",
     "eslint": "^7.18.0",
@@ -54,6 +59,8 @@
     "semantic-release": "^17.3.7"
   },
   "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.14.2",
+    "@typescript-eslint/parser": "^4.14.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.18.0",
     "eslint-config-prettier": "^7.2.0",
