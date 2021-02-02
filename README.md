@@ -51,7 +51,7 @@ This is all you need on your `.eslintrc` file:
 And this string for the `.prettierrc` file:
 
 ```
-"eslint-config-superop/.prettierrc"
+"eslint-config-superop/.prettierrc.js"
 ```
 
 ESLint and Prettier both support ignore files, but they do not have an extend feature so you should **copy and paste** the following files inside your project folder:

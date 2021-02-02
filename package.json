@@ -5,13 +5,13 @@
   "main": "index.js",
   "files": [
     ".editorconfig",
-    ".prettierrc",
+    ".prettierrc.js",
     ".eslintignore",
     ".prettierignore"
   ],
   "scripts": {
-    "eslint": "eslint . --ext .ts,.tsx,.js,.jsx --max-warnings 0 --config ./.eslintrc",
-    "prettier": "prettier .releaserc.json \".vscode/**/*.json\" \"**/*.{json,eslintrc,prettierrc}\" --config ./.prettierrc --check",
+    "eslint": "eslint . --ext .ts,.tsx,.js,.jsx --max-warnings 0 --config ./.eslintrc.js",
+    "prettier": "prettier .releaserc.json \".vscode/**/*.json\" \"**/*.json\" --config ./.prettierrc.js --check",
     "lint": "yarn eslint && yarn prettier",
     "lint-fix": "yarn eslint --fix && yarn prettier --write",
     "fix-lockfile": "node ./scripts/fix-lockfile.js",
@@ -26,8 +26,8 @@
     }
   },
   "lint-staged": {
-    "*.{j,t}s{,x}": "eslint --config ./.eslintrc --cache --fix",
-    "*.json": "prettier --config ./.prettierrc --write"
+    "*.{j,t}s{,x}": "eslint --config ./.eslintrc.js --cache --fix",
+    "*.json": "prettier --config ./.prettierrc.js --write"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
