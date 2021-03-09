@@ -8,7 +8,6 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:prettier/recommended',
-    'prettier/react',
   ],
   globals: {
     Event: false,
@@ -65,7 +64,7 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
         'plugin:import/typescript',
-        'prettier/@typescript-eslint',
+        'plugin:prettier/recommended',
       ],
       files: ['*.ts', '*.tsx'],
       parser: '@typescript-eslint/parser',
