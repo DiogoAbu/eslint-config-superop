@@ -386,7 +386,7 @@ module.exports = {
       2,
       {
         additionalHooks:
-          '^(useAutorun|useCode|useBackHandler|useFocusEffect|useMemoOne|useBackHandlerOnFocus|useThrottle|useDimensions|useTheme|useTranslation)$',
+          '^(useAutorun|useCode|useBackHandler|useFocusEffect|useMemoOne|useBackHandlerOnFocus|useDimensions|useTheme|useTranslation)$',
       },
     ],
     'react-hooks/rules-of-hooks': 2,
