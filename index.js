@@ -208,7 +208,13 @@ module.exports = {
     'default-case': 0,
     'dot-notation': 1,
     'eol-last': 1,
-    eqeqeq: [1, 'always', { null: 'ignore' }],
+    eqeqeq: [
+      1,
+      'always',
+      {
+        null: 'ignore',
+      },
+    ],
     'eslint-comments/no-aggregating-enable': 1,
     'eslint-comments/no-unlimited-disable': 1,
     'eslint-comments/no-unused-disable': 1,
@@ -462,9 +468,21 @@ module.exports = {
     'react/no-set-state': 0,
     'react/no-string-refs': 1,
     'react/no-unknown-property': 0,
+    'react/no-unstable-nested-components': [
+      2,
+      {
+        allowAsProps: true,
+      },
+    ],
     'react/no-unused-state': 0,
     'react/prop-types': 0,
     'react/react-in-jsx-scope': 1,
+    'react/require-default-props': [
+      2,
+      {
+        ignoreFunctionalComponents: true,
+      },
+    ],
     'react/self-closing-comp': 1,
     'react/style-prop-object': [
       2,
