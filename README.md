@@ -5,6 +5,9 @@
 </p>
 
 <p align="center">
+  <a href="https://www.npmjs.com/package/eslint-config-superop">
+    <img alt="npm" src="https://img.shields.io/npm/v/eslint-config-superop?style=flat-square">
+  </a>
   <a href="https://github.com/DiogoAbu/eslint-config-superop/actions">
     <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/DiogoAbu/eslint-config-superop/Generate%20Release%20and%20Publish%20to%20NPM?label=Generate%20Release%20and%20Publish%20to%20NPM&style=flat-square">
   </a>
@@ -59,8 +62,8 @@ npm install --save-dev eslint-config-superop
 
 Shareable configs are designed to work with the `extends` feature of `.eslintrc` files. You can learn more about [Shareable Configs](http://eslint.org/docs/developer-guide/shareable-configs) on the official ESLint website.
 
-This is all you need on your `.eslintrc` file:
-```json
+Add the base config to your `.eslintrc` file:
+```jsonc
 {
   "extends": [
     "superop"
@@ -78,7 +81,7 @@ yarn add --dev @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint
 
 2. Update your `.eslintrc` file:
 
-```json
+```jsonc
 {
   "extends": [
     "superop",
@@ -97,7 +100,7 @@ yarn add --dev eslint-plugin-react eslint-plugin-react-hooks
 
 2. Update your `.eslintrc` file:
 
-```json
+```jsonc
 {
   "extends": [
     "superop",
@@ -117,7 +120,7 @@ yarn add --dev eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react
 
 2. Update your `.eslintrc` file:
 
-```json
+```jsonc
 {
   "extends": [
     "superop",
@@ -128,9 +131,11 @@ yarn add --dev eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react
 }
 ```
 
-### Usage with directory alises (absolute import)
+### Usage with directory alises (absolute import) for Babel
 
-1. Install dependencies:
+1. Install [babel-plugin-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver) and configure babel
+
+2. Install dependencies:
 
 ```sh
 yarn add --dev eslint-import-resolver-babel-module
@@ -138,7 +143,7 @@ yarn add --dev eslint-import-resolver-babel-module
 
 2. Update your `.eslintrc` file:
 
-```json
+```jsonc
 {
   "extends": [
     "superop",
