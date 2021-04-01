@@ -173,7 +173,7 @@ cp -r node_modules/eslint-config-superop/.eslintignore .
 cp -r node_modules/eslint-config-superop/.prettierignore .
 ```
 
-### Usage with EditoConfig
+### Usage with EditorConfig
 
 This package also goes well with EditorConfig, just **copy and paste** [.editorconfig](.editorconfig) inside your project folder.
 
