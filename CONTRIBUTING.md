@@ -16,7 +16,7 @@ Are you out of ideas, but still wanna help? Check out the [help wanted](https://
 
 ## Code style
 
-We have a pre-commit hook enforcing commits to follow our lint rules. It points to itself.
+We have a pre-commit hook enforcing commits to follow our lint rules. The eslint config points to index.js.
 
 - [ESLint](https://eslint.org/) to enforce code style and best practices on JavaScript and TypeScript files.
 - [Prettier](https://prettier.io/) to format JSON files.

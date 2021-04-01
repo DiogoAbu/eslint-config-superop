@@ -4,7 +4,6 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:react/all',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:prettier/recommended',
@@ -59,100 +58,6 @@ module.exports = {
       },
     },
     {
-      extends: [
-        'plugin:@typescript-eslint/eslint-recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
-        'plugin:import/typescript',
-        'plugin:prettier/recommended',
-      ],
-      files: ['*.ts', '*.tsx'],
-      parser: '@typescript-eslint/parser',
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-        project: './tsconfig.json',
-        sourceType: 'module',
-      },
-      plugins: ['@typescript-eslint/eslint-plugin'],
-      rules: {
-        '@typescript-eslint/await-thenable': 2,
-        '@typescript-eslint/ban-ts-comment': 0,
-        '@typescript-eslint/ban-ts-ignore': 0,
-        '@typescript-eslint/brace-style': [2, '1tbs'],
-        '@typescript-eslint/explicit-function-return-type': 0,
-        '@typescript-eslint/explicit-module-boundary-types': [
-          2,
-          {
-            allowArgumentsExplicitlyTypedAsAny: true,
-          },
-        ],
-        '@typescript-eslint/naming-convention': [
-          2,
-          {
-            format: ['camelCase'],
-            selector: 'default',
-          },
-          {
-            format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
-            selector: 'variable',
-          },
-          {
-            format: ['camelCase', 'PascalCase'],
-            leadingUnderscore: 'allow',
-            selector: 'parameter',
-          },
-          {
-            format: ['camelCase'],
-            leadingUnderscore: 'require',
-            modifiers: ['private'],
-            selector: 'memberLike',
-          },
-          {
-            format: ['PascalCase'],
-            selector: 'typeLike',
-          },
-          {
-            filter: '_plural$',
-            format: null,
-            selector: 'property',
-          },
-          {
-            format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
-            leadingUnderscore: 'allow',
-            selector: 'property',
-          },
-        ],
-        '@typescript-eslint/no-empty-interface': 0,
-        '@typescript-eslint/no-explicit-any': 0,
-        '@typescript-eslint/no-non-null-assertion': 0,
-        '@typescript-eslint/no-unnecessary-type-assertion': 0,
-        '@typescript-eslint/no-unsafe-assignment': 0,
-        '@typescript-eslint/no-unsafe-call': 0,
-        '@typescript-eslint/no-unsafe-member-access': 0,
-        '@typescript-eslint/no-unsafe-return': 0,
-        '@typescript-eslint/no-unused-vars': 0,
-        '@typescript-eslint/no-use-before-define': [
-          2,
-          {
-            classes: true,
-            functions: false,
-            variables: false,
-          },
-        ],
-        '@typescript-eslint/promise-function-async': 2,
-        '@typescript-eslint/require-await': 2,
-        '@typescript-eslint/return-await': 2,
-        'brace-style': 0,
-        camelcase: 0,
-        'no-use-before-define': 0,
-        'require-await': 0,
-        'unused-imports/no-unused-imports-ts': 2,
-        'unused-imports/no-unused-vars-ts': 0,
-      },
-    },
-    {
       env: {
         jest: true,
         'jest/globals': true,
@@ -164,25 +69,12 @@ module.exports = {
         '*.{spec,test}.{js,ts,tsx}',
         '**/__{mocks,tests}__/**/*.{js,ts,tsx}',
       ],
-      rules: {
-        'react/jsx-no-constructed-context-values': 0,
-      },
     },
   ],
   parserOptions: {
     sourceType: 'module',
   },
-  plugins: [
-    'simple-import-sort',
-    'import',
-    'unused-imports',
-    'eslint-comments',
-    'prettier',
-    'react',
-    'react-hooks',
-    'react-native',
-    'jest',
-  ],
+  plugins: ['simple-import-sort', 'import', 'unused-imports', 'eslint-comments', 'prettier', 'jest'],
   root: true,
   rules: {
     'block-scoped-var': 0,
@@ -255,7 +147,6 @@ module.exports = {
     'jest/no-focused-tests': 1,
     'jest/no-identical-title': 1,
     'jest/valid-expect': 1,
-    'jsx-quotes': [1, 'prefer-single'],
     'key-spacing': 0,
     'keyword-spacing': 1,
     'linebreak-style': [2, 'unix'],
@@ -273,7 +164,7 @@ module.exports = {
         allowObjectEnd: true,
         allowObjectStart: true,
         beforeBlockComment: true,
-        beforeLineComment: true,
+        beforeLineComment: false,
         ignorePattern: '^ @ts-',
       },
     ],
@@ -403,100 +294,6 @@ module.exports = {
     'quote-props': 0,
     quotes: [1, 'single', 'avoid-escape'],
     radix: 1,
-    'react-hooks/exhaustive-deps': [
-      2,
-      {
-        additionalHooks:
-          '^(useAutorun|useCode|useBackHandler|useFocusEffect|useMemoOne|useBackHandlerOnFocus|useDimensions|useTheme|useTranslation)$',
-      },
-    ],
-    'react-hooks/rules-of-hooks': 2,
-    'react-native/no-color-literals': 1,
-    'react-native/no-inline-styles': 1,
-    'react-native/no-unused-styles': 1,
-    'react-native/split-platform-components': 2,
-    'react/destructuring-assignment': [
-      2,
-      'always',
-      {
-        ignoreClassFields: true,
-      },
-    ],
-    'react/display-name': 0,
-    'react/forbid-component-props': 0,
-    'react/function-component-definition': 0,
-    'react/jsx-boolean-value': 2,
-    'react/jsx-filename-extension': [
-      1,
-      {
-        extensions: ['.tsx'],
-      },
-    ],
-    'react/jsx-max-depth': [
-      2,
-      {
-        max: 6,
-      },
-    ],
-    'react/jsx-no-bind': [
-      2,
-      {
-        allowArrowFunctions: true,
-      },
-    ],
-    'react/jsx-no-comment-textnodes': 1,
-    'react/jsx-no-duplicate-props': 2,
-    'react/jsx-no-literals': 0,
-    'react/jsx-no-undef': 2,
-    'react/jsx-pascal-case': [
-      2,
-      {
-        ignore: ['FAB'],
-      },
-    ],
-    'react/jsx-props-no-spreading': 0,
-    'react/jsx-sort-props': [
-      2,
-      {
-        ignoreCase: true,
-      },
-    ],
-    'react/jsx-uses-react': 1,
-    'react/jsx-uses-vars': 1,
-    'react/no-did-mount-set-state': 1,
-    'react/no-did-update-set-state': 1,
-    'react/no-multi-comp': [
-      2,
-      {
-        ignoreStateless: true,
-      },
-    ],
-    'react/no-set-state': 0,
-    'react/no-string-refs': 1,
-    'react/no-unknown-property': 0,
-    'react/no-unstable-nested-components': [
-      2,
-      {
-        allowAsProps: true,
-      },
-    ],
-    'react/no-unused-state': 0,
-    'react/prop-types': 0,
-    'react/react-in-jsx-scope': 1,
-    'react/require-default-props': [
-      2,
-      {
-        ignoreFunctionalComponents: true,
-      },
-    ],
-    'react/self-closing-comp': 1,
-    'react/style-prop-object': [
-      2,
-      {
-        allow: ['StatusBar'],
-      },
-    ],
-    'react/wrap-multilines': 0,
     'require-await': 2,
     semi: 1,
     'semi-spacing': 1,
@@ -539,14 +336,7 @@ module.exports = {
     yoda: 1,
   },
   settings: {
-    'import/extensions': ['.ts', '.tsx', '.json'],
-    'import/ignore': ['react-native', 'react-navigation'],
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
-    },
-    'import/resolver': {
-      'babel-module': {},
-    },
+    'import/extensions': ['.js'],
     react: {
       version: 'detect',
     },

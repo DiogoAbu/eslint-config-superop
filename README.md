@@ -35,11 +35,11 @@ This is a Eslint Shareable Config that comes pre-configured with tons of stuff.
 - React Native
 - Jest
 - JSON files
-- Directory aliases ([babel-plugin-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver))
+- Directory aliases using [babel-plugin-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver) with linting from [eslint-import-resolver-babel-module](https://github.com/tleunen/eslint-import-resolver-babel-module)
 
 ## 🔧 Installation
 
-1. Install all peer dependencies:
+1. Install necessary dependencies:
 
 ```sh
 npx install-peerdeps --yarn --dev eslint-config-superop
@@ -60,14 +60,99 @@ npm install --save-dev eslint-config-superop
 Shareable configs are designed to work with the `extends` feature of `.eslintrc` files. You can learn more about [Shareable Configs](http://eslint.org/docs/developer-guide/shareable-configs) on the official ESLint website.
 
 This is all you need on your `.eslintrc` file:
-
 ```json
 {
-  "extends": "eslint-config-superop"
+  "extends": [
+    "superop"
+  ]
 }
 ```
 
-And this string for the `.prettierrc` file:
+### Usage with TypeScript
+
+1. Install dependencies:
+
+```sh
+yarn add --dev @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-import-resolver-typescript
+```
+
+2. Update your `.eslintrc` file:
+
+```json
+{
+  "extends": [
+    "superop",
+    "superop/typescript",
+  ]
+}
+```
+
+### Usage with React
+
+1. Install dependencies:
+
+```sh
+yarn add --dev eslint-plugin-react eslint-plugin-react-hooks
+```
+
+2. Update your `.eslintrc` file:
+
+```json
+{
+  "extends": [
+    "superop",
+    // "superop/typescript", // Uncomment if using TypeScript, and install deps for it
+    "superop/react",
+  ]
+}
+```
+
+### Usage with React Native
+
+1. Install dependencies:
+
+```sh
+yarn add --dev eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native
+```
+
+2. Update your `.eslintrc` file:
+
+```json
+{
+  "extends": [
+    "superop",
+    // "superop/typescript", // Uncomment if using TypeScript, and install deps for it
+    "superop/react",
+    "superop/react-native",
+  ]
+}
+```
+
+### Usage with directory alises (absolute import)
+
+1. Install dependencies:
+
+```sh
+yarn add --dev eslint-import-resolver-babel-module
+```
+
+2. Update your `.eslintrc` file:
+
+```json
+{
+  "extends": [
+    "superop",
+    "superop/import-resolver-babel",
+    // "superop/typescript", // Uncomment if using TypeScript
+    // "superop/react",  // Uncomment if using React
+    // "superop/react-native",  // Uncomment if using React Native
+  ]
+}
+```
+
+### Usage with Prettier
+
+This is all you need on your `.prettierrc` file:
 
 ```
 "eslint-config-superop/.prettierrc.js"
@@ -83,6 +168,8 @@ cp -r node_modules/eslint-config-superop/.eslintignore .
 cp -r node_modules/eslint-config-superop/.prettierignore .
 ```
 
+### Usage with EditoConfig
+
 This package also goes well with EditorConfig, just **copy and paste** [.editorconfig](.editorconfig) inside your project folder.
 
 Copy EditorConfig to current folder:
@@ -90,7 +177,9 @@ Copy EditorConfig to current folder:
 cp -r node_modules/eslint-config-superop/.editorconfig .
 ```
 
-You might also want to **copy and paste** the following scripts from our [package.json](package.json):
+### Lint scripts
+
+You might want to **copy and paste** the following scripts from our [package.json](package.json):
 - eslint
 - prettier
 - lint
@@ -105,6 +194,9 @@ Add a `.vscode` folder at the root of your project with this [settings.json](.vs
 The important parts are:
 ```json
   "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
 ```
