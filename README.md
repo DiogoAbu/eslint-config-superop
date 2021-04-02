@@ -42,20 +42,12 @@ This is a Eslint Shareable Config that comes pre-configured with tons of stuff.
 
 ## 🔧 Installation
 
-1. Install necessary dependencies:
+Install [eslint-config-superop](https://github.com/DiogoAbu/eslint-config-superop) and necessary dependencies:
 
 ```sh
 npx install-peerdeps --yarn --dev eslint-config-superop
 # or
 npx install-peerdeps --dev eslint-config-superop
-```
-
-2. Install [eslint-config-superop](https://github.com/DiogoAbu/eslint-config-superop) as a development dependecy of your project:
-
-```sh
-yarn add --dev eslint-config-superop
-# or
-npm install --save-dev eslint-config-superop
 ```
 
 ## 📖 Usage
