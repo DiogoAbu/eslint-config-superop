@@ -64,6 +64,7 @@ module.exports = {
         '@typescript-eslint/no-empty-interface': 0,
         '@typescript-eslint/no-explicit-any': 1,
         '@typescript-eslint/no-non-null-assertion': 0,
+        '@typescript-eslint/no-shadow': 2,
         '@typescript-eslint/no-unnecessary-type-assertion': 0,
         '@typescript-eslint/no-unsafe-assignment': 0,
         '@typescript-eslint/no-unsafe-call': 0,
@@ -83,6 +84,7 @@ module.exports = {
         '@typescript-eslint/return-await': 2,
         'brace-style': 0,
         camelcase: 0,
+        'no-shadow': 0,
         'no-use-before-define': 0,
         'require-await': 0,
         'unused-imports/no-unused-imports-ts': 2,
@@ -94,6 +96,11 @@ module.exports = {
     'import/extensions': ['.ts', '.tsx'],
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+      },
     },
   },
 };

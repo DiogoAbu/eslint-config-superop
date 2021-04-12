@@ -258,6 +258,7 @@ module.exports = {
     'no-underscore-dangle': [
       2,
       {
+        allowAfterThis: true,
         allow: ['_raw', '_status', '_changed', '_data', '_locale', '_calendar', '_children', '_nativeTag'],
       },
     ],
