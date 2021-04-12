@@ -41,6 +41,10 @@ module.exports = {
             selector: 'parameter',
           },
           {
+            format: ['camelCase', 'PascalCase'],
+            selector: 'function',
+          },
+          {
             format: ['camelCase'],
             leadingUnderscore: 'require',
             modifiers: ['private'],
@@ -81,9 +85,10 @@ module.exports = {
         ],
         '@typescript-eslint/promise-function-async': 2,
         '@typescript-eslint/require-await': 2,
-        '@typescript-eslint/return-await': 2,
+        '@typescript-eslint/return-await': [2, 'always'],
         'brace-style': 0,
         camelcase: 0,
+        'no-return-await': 0,
         'no-shadow': 0,
         'no-use-before-define': 0,
         'require-await': 0,
