@@ -28,6 +28,10 @@ module.exports = {
         '@typescript-eslint/naming-convention': [
           2,
           {
+            filter: {
+              match: false,
+              regex: '^(__esModule)$',
+            },
             format: ['camelCase'],
             selector: 'default',
           },
@@ -60,6 +64,10 @@ module.exports = {
             selector: 'property',
           },
           {
+            filter: {
+              match: false,
+              regex: '^(__esModule)$',
+            },
             format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
             leadingUnderscore: 'allow',
             selector: 'property',
