@@ -93,6 +93,12 @@ module.exports = {
         ],
         '@typescript-eslint/promise-function-async': 2,
         '@typescript-eslint/require-await': 2,
+        '@typescript-eslint/restrict-template-expressions': [
+          2,
+          {
+            allowNullish: true,
+          },
+        ],
         '@typescript-eslint/return-await': [2, 'always'],
         'brace-style': 0,
         camelcase: 0,
