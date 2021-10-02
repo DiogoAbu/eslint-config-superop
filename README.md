@@ -98,6 +98,7 @@ yarn add --dev eslint-plugin-react eslint-plugin-react-hooks
     "superop",
     // "superop/typescript", // Uncomment if using TypeScript, and install deps for it
     "superop/react",
+    "superop/react-new-jsx", // If using the new JSX transform
   ]
 }
 ```
@@ -118,6 +119,7 @@ yarn add --dev eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react
     "superop",
     // "superop/typescript", // Uncomment if using TypeScript, and install deps for it
     "superop/react",
+    // "superop/react-new-jsx", // Uncomment if using the new JSX transform
     "superop/react-native",
   ]
 }
@@ -142,6 +144,7 @@ yarn add --dev eslint-import-resolver-babel-module
     "superop/import-resolver-babel",
     // "superop/typescript", // Uncomment if using TypeScript
     // "superop/react",  // Uncomment if using React
+    // "superop/react-new-jsx", // Uncomment if using the new JSX transform
     // "superop/react-native",  // Uncomment if using React Native
   ]
 }
