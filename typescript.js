@@ -23,6 +23,8 @@ module.exports = {
           2,
           {
             allowArgumentsExplicitlyTypedAsAny: true,
+            allowHigherOrderFunctions: true,
+            allowTypedFunctionExpressions: true,
           },
         ],
         '@typescript-eslint/naming-convention': [
