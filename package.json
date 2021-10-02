@@ -11,6 +11,7 @@
     "import-resolver-babel.js",
     "typescript.js",
     "react.js",
+    "react-new-jsx.js",
     "react-native.js"
   ],
   "scripts": {
