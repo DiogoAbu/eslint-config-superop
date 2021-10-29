@@ -45,7 +45,10 @@ module.exports = {
   overrides: [
     {
       files: ['*.js'],
-      parser: 'babel-eslint',
+      parser: '@babel/eslint-parser',
+      parserOptions: {
+        requireConfigFile: false,
+      },
       rules: {
         'unused-imports/no-unused-imports': 2,
         'unused-imports/no-unused-vars': [
@@ -163,7 +166,7 @@ module.exports = {
         allowClassStart: true,
         allowObjectEnd: true,
         allowObjectStart: true,
-        beforeBlockComment: true,
+        beforeBlockComment: false,
         beforeLineComment: false,
         ignorePattern: '^ @ts-',
       },
