@@ -7,7 +7,7 @@ on:
       - beta
 
 env:
-  node-version: "14"
+  node-version: 16
   git-author-name: semantic-release-bot
   git-author-email: semantic-release-bot@martynus.net
 
