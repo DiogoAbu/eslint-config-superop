@@ -60,24 +60,11 @@ module.exports = {
         ],
       },
     },
-    {
-      env: {
-        jest: true,
-        'jest/globals': true,
-      },
-      files: [
-        'jest.setup.js',
-        'jest-setup.js',
-        'jestSetup.js',
-        '*.{spec,test}.{js,ts,tsx}',
-        '**/__{mocks,tests}__/**/*.{js,ts,tsx}',
-      ],
-    },
   ],
   parserOptions: {
     sourceType: 'module',
   },
-  plugins: ['simple-import-sort', 'import', 'unused-imports', 'eslint-comments', 'prettier', 'jest'],
+  plugins: ['simple-import-sort', 'import', 'unused-imports', 'eslint-comments', 'prettier'],
   root: true,
   rules: {
     'block-scoped-var': 0,
@@ -146,10 +133,6 @@ module.exports = {
       },
     ],
     'import/order': 0,
-    'jest/no-disabled-tests': 1,
-    'jest/no-focused-tests': 1,
-    'jest/no-identical-title': 1,
-    'jest/valid-expect': 1,
     'key-spacing': 0,
     'keyword-spacing': 1,
     'linebreak-style': [2, 'unix'],
