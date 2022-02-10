@@ -20,6 +20,13 @@
       }
     ],
     [
+      "@saithodev/semantic-release-backmerge",
+      {
+        "branches": [{ "from": "main", "to": "beta" }],
+        "message": "chore(release): merge main into beta [skip ci]"
+      }
+    ],
+    [
       "@semantic-release/npm",
       {
         "tarballDir": "dist"
