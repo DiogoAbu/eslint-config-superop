@@ -10,6 +10,7 @@
     ".prettierrc.js",
     "import-resolver-babel.js",
     "jest.js",
+    "react-jest.js",
     "react-native.js",
     "react-new-jsx.js",
     "react.js",

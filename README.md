@@ -169,7 +169,8 @@ yarn add --dev eslint-plugin-jest
     // "superop/react",  // Uncomment if using React
     // "superop/react-new-jsx", // Uncomment if using the new JSX transform
     // "superop/react-native",  // Uncomment if using React Native
-    "superop/jest"
+    "superop/jest",
+    "superop/react-jest" // Uncommnet if using React
   ]
 }
 ```
