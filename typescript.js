@@ -74,6 +74,10 @@ module.exports = {
             leadingUnderscore: 'allow',
             selector: 'property',
           },
+          {
+            format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
+            selector: 'enumMember',
+          },
         ],
         '@typescript-eslint/no-empty-interface': 0,
         '@typescript-eslint/no-explicit-any': 1,
