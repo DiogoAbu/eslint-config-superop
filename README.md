@@ -175,6 +175,30 @@ yarn add --dev eslint-plugin-jest
 }
 ```
 
+### Usage with Mocha
+
+1. Install dependencies:
+
+```sh
+yarn add --dev eslint-plugin-mocha
+```
+
+2. Update your `.eslintrc` file:
+
+```jsonc
+{
+  "extends": [
+    "superop",
+    // "superop/import-resolver-babel", // Uncomment if using directory alises
+    // "superop/typescript", // Uncomment if using TypeScript
+    // "superop/react",  // Uncomment if using React
+    // "superop/react-new-jsx", // Uncomment if using the new JSX transform
+    // "superop/react-native",  // Uncomment if using React Native
+    "superop/mocha",
+  ]
+}
+```
+
 ### Usage with Prettier
 
 This is all you need on your `.prettierrc` file:
