@@ -38,7 +38,7 @@ module.exports = {
           {
             filter: {
               match: false,
-              regex: '^(__esModule)$',
+              regex: '^(__esModule|[0-9]+)$',
             },
             format: ['camelCase'],
             selector: 'default',
@@ -74,7 +74,7 @@ module.exports = {
           {
             filter: {
               match: false,
-              regex: '^(__esModule)$',
+              regex: '^(__esModule|[0-9]+)$',
             },
             format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
             leadingUnderscore: 'allow',
