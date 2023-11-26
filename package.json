@@ -19,9 +19,9 @@
   ],
   "scripts": {
     "eslint": "eslint . --ext .ts,.tsx,.js,.jsx --max-warnings 0 --config ./.eslintrc.js",
-    "prettier": "prettier .releaserc.json \".vscode/**/*.json\" \"**/*.json\" --config ./.prettierrc.js --check",
-    "lint": "yarn eslint && yarn prettier",
-    "lint-fix": "yarn eslint --fix && yarn prettier --write",
+    "prettier": "prettier \"**/{*,}.{json,*rc}\" --config ./.prettierrc.js --check",
+    "lint": "yarn eslint & yarn prettier",
+    "lint-fix": "yarn eslint --fix & yarn prettier --write",
     "postinstall": "patch-package || exit 0"
   },
   "husky": {
@@ -33,20 +33,17 @@
     }
   },
   "lint-staged": {
-    "*.{j,t}s{,x}": "eslint --config ./.eslintrc.js --cache --fix",
-    "*.json": "prettier --config ./.prettierrc.js --write"
+    "{*,}.js{,x}": "eslint --config ./.eslintrc.js --fix",
+    "{*,}.{json,*rc}": "prettier --config ./.prettierrc.js --write"
   },
   "devDependencies": {
     "@babel/core": "^7.19.0",
     "@babel/eslint-parser": "^7.18.9",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
-    "@saithodev/semantic-release-backmerge": "^2.1.2",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/npm": "^9.0.1",
+    "@release-it/conventional-changelog": "^8.0.1",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.37.0",
-    "conventional-changelog-conventionalcommits": "^5.0.0",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-babel-module": "^5.3.1",
@@ -65,7 +62,7 @@
     "patch-package": "^6.4.7",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.7.1",
-    "semantic-release": "^19.0.5",
+    "release-it": "^17.0.0",
     "typescript": "^4.5.5"
   },
   "peerDependencies": {
