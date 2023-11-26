@@ -105,5 +105,9 @@
     "style linter",
     "style",
     "verify"
-  ]
+  ],
+  "volta": {
+    "node": "20.10.0",
+    "yarn": "1.22.19"
+  }
 }
