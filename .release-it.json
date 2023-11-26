@@ -7,7 +7,7 @@
     "tagArgs": ["-s"]
   },
   "npm": {
-    "publish": true,
+    "publish": false,
     "versionArgs": ["--allow-same-version"]
   },
   "github": {
