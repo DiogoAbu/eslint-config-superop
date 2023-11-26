@@ -79,7 +79,10 @@
   },
   "license": "MIT",
   "author": "DiogoAbu",
-  "repository": "github:DiogoAbu/eslint-config-superop",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiogoAbu/eslint-config-superop.git"
+  },
   "homepage": "https://github.com/DiogoAbu/eslint-config-superop",
   "bugs": "https://github.com/DiogoAbu/eslint-config-superop/issues",
   "keywords": [

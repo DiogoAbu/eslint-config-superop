@@ -1,6 +1,6 @@
-name: Release and Deploy
+name: Release and Publish
 
-run-name: Release and Deploy
+run-name: Release and Publish
 
 on:
   push:
@@ -21,3 +21,4 @@ jobs:
       gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
       gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
       npm_token: ${{ secrets.NPM_TOKEN }}
+      release_token: ${{ secrets.RELEASE_TOKEN }}
